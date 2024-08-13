@@ -1,0 +1,28 @@
+[
+  {
+    "content": "Vestibulum posuere felis et auctor tempus.",
+    "need_initials": true
+  },
+  {
+    "content": "Nullam ornare dui vel odio condimentum ornare.",
+    "need_initials": true
+  },
+  {
+    "content": "Aliquam lacus nibh, elementum sed ultricies eget, fringilla ut nulla. Morbi non lobortis ante, vel interdum magna.",
+    "need_initials": true
+  },
+  {
+    "content": "Nullam lobortis ex non fermentum semper."
+  },
+  {
+    "content": "Sed rutrum, mi nec rhoncus iaculis, dui velit consectetur lorem, vitae auctor odio lacus et tortor.",
+    "need_initials": true
+  },
+  {
+    "content": "Suspendisse tincidunt luctus mauris a sagittis."
+  },
+  {
+    "content": "Mauris ac quam nec nunc ullamcorper tincidunt.",
+    "need_initials": true
+  }
+]

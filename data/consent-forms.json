@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "code": "extraction",
+    "title": "Oral And Maxillofacial Surgery Consent",
+    "short_title": "Extraction"
+  },
+  {
+    "id": 1,
+    "code": "implant",
+    "title": "Consent for Dental Implant Surgery",
+    "short_title": "Implant"
+  },
+  {
+    "id": 2,
+    "code": "bone_graft",
+    "title": "Consent For Bone Grafting Procedure",
+    "short_title": "Bone Graft"
+  },
+  {
+    "id": 3,
+    "code": "sinus_lift",
+    "title": "Consent for Two-Stage Osseousintegrated Implant With Sinus-Lift/Bone Grafting Procedure",
+    "short_title": "Sinus Lift"
+  }
+]

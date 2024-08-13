@@ -1,0 +1,36 @@
+[
+  {
+    "content": "Post-operative discomfort and swelling, that may necessitate several days of home recuperation.",
+    "need_initials": true
+  },
+  {
+    "content": "Heavy bleeding that may be prolonged.",
+    "need_initials": true
+  },
+  {
+    "content": "Injury to the adjacent teeth and fillings, causing the loss of a tooth or teeth or need for\n          restorations or root canal therapy.",
+    "need_initials": true
+  },
+  {
+    "content": "Development of a dry socket - localized alveolitis - requiring extended treatment.",
+    "need_initials": true
+  },
+  {
+    "content": "Post-operative infection requiring additional treatment.",
+    "need_initials": true
+  },
+  {
+    "content": "Delayed healing requiring additional treatment.",
+    "need_initials": true
+  },
+  {
+    "content": "Stretching of the corners of the mouth with resultant cracking and bruising.",
+    "need_initials": true
+  },
+  {
+    "content": "Injury to the nerve underlying the teeth resulting in numbness, tingling, painful or altered sensation in the lip,\n          chin, cheek, gum, teeth, and/or tongue on the operated side; this may persist for several weeks, months, or in remote instances, permanently."
+  },
+  {
+    "content": "Changes in the bite or pain of the Temporomandibular joint (ear/jaw joint)."
+  }
+]

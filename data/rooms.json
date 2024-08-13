@@ -1,0 +1,128 @@
+[
+  {
+    "code": 1,
+    "appointment": {
+      "code": "3CON",
+      "first_name": "George",
+      "last_name": "Smith",
+      "gender": "Male",
+      "birthday": "01/12/1983",
+      "start_date": "06/11/2019",
+      "start_time": "10:00",
+      "doctor_title": "Dr. Henrietta Jacoby",
+      "assistant": "Brenda Stewart",
+      "vital_signs": {
+        "height_ft": "6",
+        "height_in": "02",
+        "weight": "190",
+        "bmi": "22.9"
+      }
+    },
+    "status": {
+      "code": "ready_to_be_seen",
+      "title": "Patient is ready to be seen by Doctor"
+    },
+    "update_time": 1716711028000
+  },
+  {
+    "code": 2,
+    "appointment": {
+      "code": "IMPL",
+      "first_name": "Michael",
+      "last_name": "Kaminsky",
+      "gender": "Male",
+      "birthday": "03/21/1990",
+      "start_date": "06/11/2019",
+      "start_time": "14:00",
+      "doctor_title": "Dr. Henrietta Jacoby",
+      "assistant": "Slavica Julien",
+      "vital_signs": {
+        "height_ft": "5",
+        "height_in": "11",
+        "weight": "165",
+        "bmi": "32.8"
+      }
+    },
+    "status": {
+      "code": "room_occupied",
+      "title": "Room Occupied"
+    },
+    "update_time": 1716926277000
+  },
+  {
+    "code": 3,
+    "appointment": {
+      "code": "DBL",
+      "first_name": "Abbas",
+      "last_name": "Nelson",
+      "gender": "Female",
+      "birthday": "08/10/1974",
+      "start_date": "06/12/2019",
+      "start_time": "15:30",
+      "doctor_title": "Dr. Julien Chosson",
+      "assistant": "Evelyn Tamir",
+      "is_doctor": true,
+      "vital_signs": {
+        "height_ft": "5",
+        "height_in": "07",
+        "weight": "153",
+        "bmi": "29.4"
+      }
+    },
+    "status": {
+      "code": "waiting_fees",
+      "title": "Waiting for fees"
+    },
+    "update_time": 1714774873000
+  },
+  {
+    "code": 4,
+    "appointment": {
+      "code": "DBL",
+      "first_name": "Abbas",
+      "last_name": "Nelson",
+      "gender": "Male",
+      "birthday": "08/10/1974",
+      "start_date": "06/12/2019",
+      "start_time": "15:30",
+      "doctor_title": "Dr. Samantha White",
+      "assistant": "Eric Boyd",
+      "vital_signs": {
+        "height_ft": "6",
+        "height_in": "07",
+        "weight": "198",
+        "bmi": "23.2"
+      }
+    },
+    "status": {
+      "code": "fees_reviewed",
+      "title": "Fees were reviewed"
+    },
+    "update_time": 1715457210000
+  },
+  {
+    "code": 5,
+    "appointment": {
+      "code": "DBL",
+      "first_name": "Stacey",
+      "last_name": "Gaget",
+      "gender": "Female",
+      "birthday": null,
+      "start_date": "06/13/2019",
+      "start_time": "11:15",
+      "doctor_title": "Dr. William Udell",
+      "assistant": "Brenda Stewart",
+      "vital_signs": {
+        "height_ft": "6",
+        "height_in": "01",
+        "weight": "188",
+        "bmi": "26.3"
+      }
+    },
+    "status": {
+      "code": "fees_reviewed",
+      "title": "Fees were reviewed"
+    },
+    "update_time": 1715356114000
+  }
+]

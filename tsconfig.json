@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES5", 
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./src", // or alias in Vite/Webpack config
+    "paths": {
+      "@models/*": ["models/*"],
+      "@views/*": ["views/*"],
+      "@controllers/*": ["controllers/*"],
+      "@utils/*": ["utils/*"],
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+} 
