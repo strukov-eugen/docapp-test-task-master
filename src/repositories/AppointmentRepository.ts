@@ -4,54 +4,46 @@ import Room from '../models/Room';
 import Patient from '../models/Patient';
 
 export default class AppointmentRepository extends Repository<Appointment> {
-    private appointments: Appointment[] = [];
-
     constructor() {
-        super('appointments');
-        this.appointments = this.getAll();
+        super(Appointment);
     }
 
-    async fetchAppointments() {
-        const response = await fetch('/data/rooms.json');
-        const data = await response.json();
-        const rooms: Room[] = []; // load rooms as needed
-        const patients: Patient[] = []; // load patients as needed
+    async fetchAppointments(): Promise<void> {
+        try {
+            const response = await fetch('/data/rooms.json');
+            const data = await response.json();
 
-        // Create Appointment objects from JSON data
-        this.appointments = data.map((item: any) => {
-            const room = rooms.find(r => r.code === item.code) || new Room(item.code, item.code);
-            const patient = new Patient(
-                item.appointment.first_name,
-                item.appointment.last_name,
-                item.appointment.gender,
-                item.appointment.birthday,
-                    { 
-                        height_ft: item.appointment.vital_signs.height_ft,
-                        height_in: item.appointment.vital_signs.height_in,
-                        weight: item.appointment.vital_signs.weight,
-                        bmi: item.appointment.vital_signs.bmi
-                    }, 
-                item.appointment.is_doctor);
+            const appointments: Appointment[] = data.map((item: any) => {
+                const { appointment } = item;
+                const room = new Room(item);
+                const patient = new Patient(appointment);
+                return new Appointment({
+                    code: appointment.code,
+                    start_date: appointment.start_date,
+                    start_time: appointment.start_time,
+                    doctor_title: appointment.doctor_title,
+                    assistant: appointment.assistant,
+                    room_code: item.code,
+                    patient_id: item.patient_id,
+                    status: item.status,
+                    update_time: item.update_time,
+                    patient: patient,
+                    room: room
+                });
+            });
 
-            return new Appointment(
-                item.appointment.code,
-                item.appointment.start_date,
-                item.appointment.start_time,
-                item.appointment.doctor_title,
-                item.appointment.assistant,
-                item.code,
-                item.appointment.first_name + item.appointment.last_name,
-                item.status,
-                item.update_time,
-                patient,
-                room
-            );
-        });
-
-        this.save(this.appointments);
+            this.set(appointments.map(appointment => ({
+                key: appointment.code, // Используем код как ключ
+                item: appointment
+            })));
+            
+        } catch (error) {
+            console.error('Failed to fetch appointments:', error);
+        }
     }
 
-    getAppointments() {
-        return this.appointments;
+    getAppointments(): Appointment[] {
+        // Извлекаем данные из Map и преобразуем их в массив
+        return Array.from(this.getItems().values());
     }
 }

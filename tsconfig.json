@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5", 
+    "target": "ES2015", 
     "module": "ESNext",
     "strict": true,
     "esModuleInterop": true,
@@ -13,14 +13,14 @@
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "baseUrl": "./src", // or alias in Vite/Webpack config
+    "baseUrl": "./src",
     "paths": {
       "@models/*": ["models/*"],
       "@views/*": ["views/*"],
       "@controllers/*": ["controllers/*"],
-      "@utils/*": ["utils/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
-} 
+}

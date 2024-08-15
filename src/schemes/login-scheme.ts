@@ -2,11 +2,13 @@ const loginScheme = {
     controllers: [
         {
             name: 'LoginController',
-            model: 'User',
             view: 'LoginView',
             repositories: ['UserRepository'],
         },
     ],
+    access: {
+        role: 'user'
+    }
 };
 
 export default loginScheme;

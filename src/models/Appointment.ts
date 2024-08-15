@@ -7,17 +7,19 @@ export interface Status {
 }
 
 export default class Appointment {
-    constructor(
-        public code: string,
-        public start_date: string,
-        public start_time: string,
-        public doctor_title: string,
-        public assistant: string,
-        public room_code: number,
-        public patient_id: string,
-        public status: Status,
-        public update_time: number,
-        public patient?: Patient,
-        public room?: Room
-    ) {}
+    code: string = '';
+    start_date: string = '';
+    start_time: string = '';
+    doctor_title: string = '';
+    assistant: string = '';
+    room_code: number = 0;
+    patient_id: string = '';
+    status: Status = { code: '', title: '' };
+    update_time: number = Date.now();
+    patient?: Patient;
+    room?: Room;
+
+    constructor(params: Partial<Appointment> = {}) {
+        Object.assign(this, params);
+    }
 }

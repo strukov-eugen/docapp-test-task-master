@@ -6,13 +6,14 @@ export interface VitalSigns {
 }
 
 export default class Patient {
-    constructor(
-        public first_name: string,
-        public last_name: string,
-        public gender: string,
-        public birthday: string | null,
-        public vital_signs: VitalSigns,
-        public is_doctor: boolean | undefined
-    ) {
+    first_name: string = '';
+    last_name: string = '';
+    gender: string = '';
+    birthday: string | null = null;
+    vital_signs: VitalSigns = { height_ft: '', height_in: '', weight: '', bmi: '' };
+    is_doctor: boolean | undefined = undefined;
+
+    constructor(params: Partial<Patient> = {}) {
+        Object.assign(this, params);
     }
 }

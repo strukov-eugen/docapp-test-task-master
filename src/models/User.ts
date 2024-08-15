@@ -1,8 +1,9 @@
 export default class User {
-    constructor(
-        public id: number,
-        public username: string,
-        public fullName: string,
-        public token: string
-    ) {}
+    id: string = '';
+    username: string = '';
+    role: 'admin' | 'user' = 'user';
+
+    constructor(params: Partial<User> = {}) {
+        Object.assign(this, params);
+    }
 }

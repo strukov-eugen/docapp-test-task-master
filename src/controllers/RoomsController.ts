@@ -1,4 +1,3 @@
-import Room from '../models/Room';
 import RoomsView from '../views/RoomsView';
 import AppointmentRepository from '../repositories/AppointmentRepository';
 import ConsentForms from '../forms/ConsentForms';
@@ -9,7 +8,6 @@ export default class RoomsController {
     private consentForms: ConsentForms;
 
     constructor(
-        model: Room,
         view: RoomsView,
         appointmentRepo: AppointmentRepository
     ) {

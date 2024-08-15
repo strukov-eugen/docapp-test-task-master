@@ -1,34 +1,55 @@
 import User from '../models/User';
-import { getFromStorage, saveToStorage } from '../utils/storageUtils';
+import Repository from './Repository';
 
-export default class UserRepository {
-    private storageKey = 'currentUser';
+export default class UserRepository extends Repository<User> {
+    private currentUserIdKey = 'currentUserId';
+
+    constructor() {
+        super(User);
+        this.loadCurrentUser();
+    }
 
     async authenticate(username: string, password: string): Promise<User | null> {
-        // Simplified authentication logic
+        // Упрощенная логика аутентификации
         if (username === 'admin' && password === 'admin') {
-            return new User(1, username, 'Admin User', 'fake-jwt-token');
+            const user = new User({ id: '1', username, role: 'admin' });
+            this.addOrUpdateItem(user.id, user);
+            this.setCurrentUser(user.id);
+            return user;
         }
         return null;
     }
 
-    saveUser(user: User) {
-        saveToStorage(this.storageKey, user);
+    private setCurrentUser(userId: string): void {
+        localStorage.setItem(this.currentUserIdKey, userId);
+        this.emit('change');
     }
 
-    getUser(): User | null {
-        return getFromStorage(this.storageKey);
+    getCurrentUser(): User | null {
+        const userId = localStorage.getItem(this.currentUserIdKey);
+        if (userId) {
+            return this.getItems().get(userId) || null;
+        }
+        return null;
     }
 
-    // Метод проверки, авторизован ли пользователь
     isUserAuthenticated(): boolean {
-        const user = localStorage.getItem(this.storageKey);
-        return user !== null;
+        return localStorage.getItem(this.currentUserIdKey) !== null;
     }
 
-    // Метод очистки данных пользователя
-    clear() {
-        localStorage.removeItem(this.storageKey);
+    clear(): void {
+        localStorage.removeItem(this.currentUserIdKey);
+        this.getItems().clear();
+        this.saveToLocalStorage();
     }
 
+    private loadCurrentUser(): void {
+        const userId = localStorage.getItem(this.currentUserIdKey);
+        if (userId) {
+            const user = this.getItems().get(userId);
+            if (user) {
+                this.setCurrentUser(userId);
+            }
+        }
+    }
 }

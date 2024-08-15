@@ -2,11 +2,13 @@ const roomsScheme = {
     controllers: [
         {
             name: 'RoomsController',
-            model: 'Room',
             view: 'RoomsView',
             repositories: ['AppointmentRepository'],
         }
     ],
+    access: {
+        role: 'admin'
+    }
 };
 
 export default roomsScheme;

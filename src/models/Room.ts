@@ -1,6 +1,8 @@
 export default class Room {
-    constructor(
-        public code: number,
-        public room_number: number
-    ) {}
+    code: number = 0;
+    room_number: number = 0;
+
+    constructor(params: Partial<Room> = {}) {
+        Object.assign(this, params);
+    }
 }
