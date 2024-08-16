@@ -1,8 +1,8 @@
+// LoginController.js
 import UserRepository from '../repositories/UserRepository';
 import LoginView from '../views/LoginView';
 
 export default class LoginController {
-
     constructor(
         private view: LoginView,
         private userRepo: UserRepository
@@ -23,5 +23,9 @@ export default class LoginController {
                 this.view.showLoginError("An error occurred during login");
             }
         };
+    }
+
+    destroy() {
+        // Очистка ресурсов и удаление слушателей
     }
 }

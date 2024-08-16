@@ -1,7 +1,6 @@
 import { Router } from './router';
 
 async function init() {
-
     const router = new Router();
 
     // Registering Routes Using a Scheme
